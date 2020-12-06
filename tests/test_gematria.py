@@ -33,7 +33,7 @@ class Test_Gematria(unittest.TestCase):
         self.assertEqual(self.gematria.number_to_hebrew(515), "תקטו")
 
     def test_hundreds_num_that_ends_with_16(self):
-        self.assertEqual(self.gematria.number_to_hebrew(516), "תקטז")
+        self.assertEqual(self.gematria.number_to_hebrew(416), "תקטז")
 
     def test_zero(self):
         with self.assertRaises(Exception):
