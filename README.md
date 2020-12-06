@@ -1,4 +1,7 @@
 # gematriapy
+![CI](https://github.com/NoamNol/gematriapy/workflows/CI/badge.svg)
+![PyPI Deploy](https://github.com/NoamNol/gematriapy/workflows/PyPI%20Deploy/badge.svg)
+
 Convert numbers to Hebrew letters
 
 ## Install
