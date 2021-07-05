@@ -2,7 +2,7 @@
 ![CI](https://github.com/NoamNol/gematriapy/workflows/CI/badge.svg)
 ![PyPI Deploy](https://github.com/NoamNol/gematriapy/workflows/PyPI%20Deploy/badge.svg)
 
-Convert numbers to Hebrew letters
+Convert number to Hebrew or Hebrew to number
 
 ## Install
 ```bash
@@ -10,18 +10,34 @@ pip install gematriapy
 ```
 
 ## Usage
+**`to_hebrew`**:
 ```python
-from gematriapy import Gematria
-gematria = Gematria()
-gematria.number_to_hebrew(3) # => "ג"
+import gematriapy
+gematriapy.to_hebrew(3) # => "ג"
 ```
 
 ```python
-gematria.number_to_hebrew(15) # => "טו"
+gematriapy.to_hebrew(15) # => "טו"
 ```
 
 ```python
-gematria.number_to_hebrew(822) # => "תתכב"
+gematriapy.to_hebrew(822) # => "תתכב"
 ```
 
 > **NOTE**: Numbers greater than 999 are not supported yet.
+
+<br/>
+
+**`to_number`**:
+```python
+import gematriapy
+gematriapy.to_number("ג") # => 3
+```
+
+```python
+gematriapy.to_number("טו") # => 15
+```
+
+```python
+gematriapy.to_number("אבא") # => 4
+```

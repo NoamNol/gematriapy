@@ -1,14 +1,15 @@
 import setuptools
+import gematriapy
 
 with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setuptools.setup(
     name="gematriapy",
-    version="0.1.0",
+    version=gematriapy.__version__,
     author="Noam Nol",
     author_email="noamnol19@gmail.com",
-    description="Convert numbers to Hebrew letters",
+    description=gematriapy.__doc__,
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/NoamNol/gematriapy",
