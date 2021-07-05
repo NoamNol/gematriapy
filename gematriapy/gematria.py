@@ -1,5 +1,7 @@
-class Gematria:
-    _HEBREW_LETTERS = [
+from collections import OrderedDict
+
+
+HEBREW_LETTERS: OrderedDict = OrderedDict([
         ("א", 1),
         ("ב", 2),
         ("ג", 3),
@@ -22,26 +24,26 @@ class Gematria:
         ("ר", 200),
         ("ש", 300),
         ("ת", 400)
-        ]
-    _REVERSED_HEBREW_LETTERS = _HEBREW_LETTERS[::-1]
+])
 
-    def number_to_hebrew(self, number: int) -> str:
+
+def to_hebrew(number: int) -> str:
         """
-        Convert number to Hebrew letter(s)
+    Convert number to Hebrew letter(s).
 
         Examples:
-            2  = "ב"
-            47 = "מז"
+        to_hebrew(2)  # => "ב"
+        to_hebrew(47) # => "מז"
         """
         if number <= 0:
             raise Exception("Number must be bigger than zero")
         if number >= 1000:
-            raise Exception("Number bigger than 999 is not supported yet")
+        raise Exception("Number bigger than 999 is not yet supported")
 
         remainder = number
         heb_sum = ""
         while remainder > 0:
-            for heb_letter, val in self._REVERSED_HEBREW_LETTERS:
+        for heb_letter, val in reversed(HEBREW_LETTERS.items()):
                 if (val <= remainder):
                     if remainder == 15:
                         heb_sum += "טו"
