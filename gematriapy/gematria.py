@@ -27,6 +27,16 @@ HEBREW_BASIC_LETTERS: OrderedDict = OrderedDict([
 ])
 
 
+HEBREW_ALL_LETTERS = {
+    **HEBREW_BASIC_LETTERS,
+    "ך": 20,
+    "ם": 40,
+    "ן": 50,
+    "ף": 80,
+    "ץ": 90,
+}
+
+
 def to_hebrew(number: int) -> str:
     """
     Convert number to Hebrew letter(s).
@@ -68,5 +78,5 @@ def to_number(hebrew: str) -> int:
     """
     sum = 0
     for letter in hebrew:
-        sum += HEBREW_BASIC_LETTERS.get(letter, 0)
+        sum += HEBREW_ALL_LETTERS.get(letter, 0)
     return sum
