@@ -1,7 +1,7 @@
 from collections import OrderedDict
 
 
-HEBREW_LETTERS: OrderedDict = OrderedDict([
+HEBREW_BASIC_LETTERS: OrderedDict = OrderedDict([
     ("א", 1),
     ("ב", 2),
     ("ג", 3),
@@ -43,7 +43,7 @@ def to_hebrew(number: int) -> str:
     remainder = number
     heb_sum = ""
     while remainder > 0:
-        for heb_letter, val in reversed(HEBREW_LETTERS.items()):
+        for heb_letter, val in reversed(HEBREW_BASIC_LETTERS.items()):
             if (val <= remainder):
                 if remainder == 15:
                     heb_sum += "טו"
@@ -68,5 +68,5 @@ def to_number(hebrew: str) -> int:
     """
     sum = 0
     for letter in hebrew:
-        sum += HEBREW_LETTERS.get(letter, 0)
+        sum += HEBREW_BASIC_LETTERS.get(letter, 0)
     return sum
