@@ -1,6 +1,6 @@
 # gematriapy
-![CI](https://github.com/NoamNol/gematriapy/workflows/CI/badge.svg)
-![PyPI Deploy](https://github.com/NoamNol/gematriapy/workflows/PyPI%20Deploy/badge.svg)
+[![PyPI Latest Release](https://img.shields.io/pypi/v/gematriapy.svg?color=b2c5f1)](https://pypi.org/project/gematriapy/)
+[![PyPI Downloads](https://img.shields.io/pypi/dm/gematriapy.svg?label=PyPI%20downloads)](https://pypi.org/project/gematriapy/)
 
 Convert number to Hebrew or Hebrew to number
 
