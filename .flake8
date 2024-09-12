@@ -1,5 +1,5 @@
 [flake8]
-exclude = .git,__pycache__,docs/conf.py,old,build,dist
+exclude = .git,__pycache__,docs/conf.py,old,build,dist,.venv,.env
 per-file-ignores =
     # ignore "imported but unused" and "no newline at end of file"
     __init__.py: F401,W292
