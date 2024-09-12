@@ -14,6 +14,9 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/NoamNol/gematriapy",
     packages=['gematriapy'],
+    package_data={
+        'gematriapy': ['py.typed'],
+    },
     license="MIT",
     classifiers=[
         "Programming Language :: Python :: 3",
