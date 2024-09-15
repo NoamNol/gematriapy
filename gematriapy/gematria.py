@@ -46,9 +46,9 @@ def to_hebrew(number: int) -> str:
         to_hebrew(47) # => "מז"
     """
     if number <= 0:
-        raise Exception("Number must be bigger than zero")
+        raise ValueError("Number must be bigger than zero")
     if number >= 1000:
-        raise Exception("Number bigger than 999 is not yet supported")
+        raise ValueError("Number bigger than 999 is not yet supported")
 
     remainder = number
     heb_sum = ""
