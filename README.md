@@ -11,17 +11,21 @@ pip install gematriapy
 
 ## Usage
 **`to_hebrew`**:
+
 ```python
-import gematriapy
-gematriapy.to_hebrew(3) # => "ג"
+>>> import gematriapy
+>>> gematriapy.to_hebrew(3)
+"ג"
 ```
 
 ```python
-gematriapy.to_hebrew(15) # => "טו"
+>>> gematriapy.to_hebrew(15)
+"טו"
 ```
 
 ```python
-gematriapy.to_hebrew(822) # => "תתכב"
+>>> gematriapy.to_hebrew(822)
+"תתכב"
 ```
 
 > **NOTE**: Numbers greater than 999 are not supported yet.
@@ -29,15 +33,19 @@ gematriapy.to_hebrew(822) # => "תתכב"
 <br/>
 
 **`to_number`**:
+
 ```python
-import gematriapy
-gematriapy.to_number("ג") # => 3
+>>> import gematriapy
+>>> gematriapy.to_number("ג")
+3
 ```
 
 ```python
-gematriapy.to_number("טו") # => 15
+>>> gematriapy.to_number("טו")
+15
 ```
 
 ```python
-gematriapy.to_number("אבא") # => 4
+>>> gematriapy.to_number("אבא")
+4
 ```
