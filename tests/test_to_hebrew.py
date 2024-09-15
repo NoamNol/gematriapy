@@ -34,13 +34,13 @@ class TestGematriapy_ToHebrew(unittest.TestCase):
         self.assertEqual(gematriapy.to_hebrew(516), "תקטז")
 
     def test_zero(self):
-        with self.assertRaises(Exception):
+        with self.assertRaises(ValueError):
             gematriapy.to_hebrew(0)
 
     def test_negative(self):
-        with self.assertRaises(Exception):
+        with self.assertRaises(ValueError):
             gematriapy.to_hebrew(-1)
 
     def test_too_big(self):
-        with self.assertRaises(Exception):
+        with self.assertRaises(ValueError):
             gematriapy.to_hebrew(1000)
