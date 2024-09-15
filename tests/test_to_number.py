@@ -15,6 +15,20 @@ class TestGematriapy_ToNumber(unittest.TestCase):
     def test_long_hebrew_v2(self):
         self.assertEqual(gematriapy.to_number("רטו"), 215)
 
+    def test_long_hebrew_v3(self):
+        self.assertEqual(gematriapy.to_number("שלום"), 376)
+
+    def test_single_final_letter(self):
+        """
+        In Hebrew, 'final' letters are different from regular letters.
+        Some letters have a special shape if positioned at the end of a word.
+        """
+        self.assertEqual(gematriapy.to_number("ך"), 20)
+        self.assertEqual(gematriapy.to_number("ם"), 40)
+        self.assertEqual(gematriapy.to_number("ן"), 50)
+        self.assertEqual(gematriapy.to_number("ף"), 80)
+        self.assertEqual(gematriapy.to_number("ץ"), 90)
+
     def test_illegal_hebrew_number_v1(self):
         """
         In Hebrew, letters representing a numerical value should have an order:
