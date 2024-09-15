@@ -7,9 +7,17 @@ class TestGematriapy_ToHebrew(unittest.TestCase):
         self.assertEqual(gematriapy.to_hebrew(3), "ג")
 
     def test_15_num(self):
+        """
+        A special case where it's traditional to replace the letters
+        for 10 + 5 with letters for 9 + 6.
+        """
         self.assertEqual(gematriapy.to_hebrew(15), "טו")
 
     def test_16_num(self):
+        """
+        A special case where it's traditional to replace the letters
+        for 10 + 6 with letters for 9 + 7.
+        """
         self.assertEqual(gematriapy.to_hebrew(16), "טז")
 
     def test_random_tens_num_v1(self):
@@ -23,6 +31,9 @@ class TestGematriapy_ToHebrew(unittest.TestCase):
 
     def test_random_hundreds_num_v2(self):
         self.assertEqual(gematriapy.to_hebrew(499), "תצט")
+
+    def test_random_hundreds_num_v3(self):
+        self.assertEqual(gematriapy.to_hebrew(766), "תשסו")
 
     def test_bigger_than_800_num(self):
         self.assertEqual(gematriapy.to_hebrew(822), "תתכב")
