@@ -39,11 +39,14 @@ HEBREW_ALL_LETTERS = {
 
 def to_hebrew(number: int) -> str:
     """
-    Convert number to Hebrew letter(s).
+    Convert a number to Hebrew letter(s).
 
     Examples:
-        to_hebrew(2)  # => "ב"
-        to_hebrew(47) # => "מז"
+
+    >>> to_hebrew(2)
+    'ב'
+    >>> to_hebrew(47)
+    'מז'
     """
     if number <= 0:
         raise ValueError("Number must be bigger than zero")
@@ -70,11 +73,15 @@ def to_hebrew(number: int) -> str:
 
 def to_number(hebrew: str) -> int:
     """
-    Convert Hebrew letters to number. Ignore Non-Hebrew letters.
+    Sum the numerical value of all Hebrew letters in the text.
+    Ignore Non-Hebrew letters.
 
     Examples:
-        to_number("ב")  # => 2
-        to_number("מז") # => 47
+
+    >>> to_number("ב")
+    2
+    >>> to_number("מ״ז")
+    47
     """
     sum = 0
     for letter in hebrew:
