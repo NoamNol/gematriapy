@@ -37,7 +37,11 @@ HEBREW_ALL_LETTERS = {
 }
 
 
-def to_hebrew(number: int) -> str:
+GERESH = "׳"
+GERSHAYIM = "״"
+
+
+def to_hebrew(number: int, *, add_gershayim: bool = False) -> str:
     """
     Convert a number to Hebrew letter(s).
 
@@ -47,7 +51,25 @@ def to_hebrew(number: int) -> str:
     'ב'
     >>> to_hebrew(47)
     'מז'
+
+    With flag `add_gershayim`:
+
+    >>> to_hebrew(2, add_gershayim=True)
+    'ב׳'
+    >>> to_hebrew(16, add_gershayim=True)
+    'ט״ז'
     """
+    letters = _simple_to_hebrew(number)
+    if add_gershayim:
+        if len(letters) == 1:
+            letters += GERESH
+        elif len(letters) > 1:
+            index = len(letters) - 1
+            letters = letters[:index] + GERSHAYIM + letters[index:]
+    return letters
+
+
+def _simple_to_hebrew(number: int) -> str:
     if number <= 0:
         raise ValueError("Number must be bigger than zero")
     if number >= 1000:
