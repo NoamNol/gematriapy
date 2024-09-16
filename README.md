@@ -15,12 +15,12 @@ pip install gematriapy
 ```python
 >>> import gematriapy
 >>> gematriapy.to_hebrew(3)
-"ג"
+'ג'
 ```
 
 ```python
 >>> gematriapy.to_hebrew(15)
-"טו"
+'טו'
 ```
 
 ```python
