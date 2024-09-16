@@ -37,8 +37,8 @@ HEBREW_ALL_LETTERS = {
 }
 
 
-GERESH = "׳"
-GERSHAYIM = "״"
+GERESH = "'"
+GERSHAYIM = '"'
 
 
 def to_hebrew(number: int, *, add_gershayim: bool = False) -> str:
@@ -55,9 +55,9 @@ def to_hebrew(number: int, *, add_gershayim: bool = False) -> str:
     With flag `add_gershayim`:
 
     >>> to_hebrew(2, add_gershayim=True)
-    'ב׳'
+    "ב'"
     >>> to_hebrew(16, add_gershayim=True)
-    'ט״ז'
+    'ט"ז'
     """
     letters = _simple_to_hebrew(number)
     if add_gershayim:
