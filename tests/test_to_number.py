@@ -55,3 +55,6 @@ class TestGematriapy_ToNumber(unittest.TestCase):
     def test_hebrew_with_nikud(self):
         self.assertEqual(gematriapy.to_number("שלום"), 376)
         self.assertEqual(gematriapy.to_number("שָׁלוֹם"), 376)
+
+    def test_with_gershayim(self):
+        self.assertEqual(gematriapy.to_number("תשס״ו"), 766)

@@ -48,6 +48,10 @@ class TestGematriapy_ToHebrew(unittest.TestCase):
         with self.assertRaises(ValueError):
             gematriapy.to_hebrew(0)
 
+    def test_zero_with_add_gershayim(self):
+        with self.assertRaises(ValueError):
+            gematriapy.to_hebrew(0, add_gershayim=True)
+
     def test_negative(self):
         with self.assertRaises(ValueError):
             gematriapy.to_hebrew(-1)
@@ -55,3 +59,22 @@ class TestGematriapy_ToHebrew(unittest.TestCase):
     def test_too_big(self):
         with self.assertRaises(ValueError):
             gematriapy.to_hebrew(1000)
+
+    def test_add_gershayim_one_letter(self):
+        self.assertEqual(gematriapy.to_hebrew(3, add_gershayim=True), 'ג׳')
+
+    def test_add_gershayim_two_letters(self):
+        self.assertEqual(gematriapy.to_hebrew(13, add_gershayim=True), 'י״ג')
+
+    def test_add_gershayim_two_letters_value_16_and_17(self):
+        """
+        15 and 16 are a special case in Hebrew.
+        """
+        self.assertEqual(gematriapy.to_hebrew(15, add_gershayim=True), 'ט״ו')
+        self.assertEqual(gematriapy.to_hebrew(16, add_gershayim=True), 'ט״ז')
+
+    def test_add_gershayim_three_letters(self):
+        self.assertEqual(gematriapy.to_hebrew(115, add_gershayim=True), "קט״ו")
+
+    def test_add_gershayim_four_letters(self):
+        self.assertEqual(gematriapy.to_hebrew(766, add_gershayim=True), "תשס״ו")
