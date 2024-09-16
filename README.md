@@ -25,12 +25,12 @@ pip install gematriapy
 
 ```python
 >>> gematriapy.to_hebrew(3, add_gershayim=True)
-"ג׳"
+"ג'"
 ```
 
 ```python
 >>> gematriapy.to_hebrew(766, add_gershayim=True)
-"תשס״ו"
+'תשס"ו'
 ```
 
 > **NOTE**: Numbers greater than 999 are not supported yet.
@@ -46,7 +46,7 @@ pip install gematriapy
 ```
 
 ```python
->>> gematriapy.to_number("ט״ו")
+>>> gematriapy.to_number('ט"ו')
 15
 ```
 

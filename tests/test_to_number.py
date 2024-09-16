@@ -58,3 +58,4 @@ class TestGematriapy_ToNumber(unittest.TestCase):
 
     def test_with_gershayim(self):
         self.assertEqual(gematriapy.to_number("תשס״ו"), 766)
+        self.assertEqual(gematriapy.to_number('תשס"ו'), 766)
